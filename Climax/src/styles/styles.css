@@ -1,0 +1,237 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;400;600&display=swap');
+
+* {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+header {
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+#logo h1 {
+    margin: 0; 
+    font-size: 2.5em;
+}
+
+#logo p {
+    margin: 5px 0 0;
+    font-size: 1.2em;
+}
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-image: url('https://st3.depositphotos.com/11246114/15811/i/450/depositphotos_158118962-stock-photo-blue-sky-background-sunny-summer.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+#container {
+    background: linear-gradient(90deg, #4d95e7c0, #aab2f8);
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    max-width: 500px;
+    width: 90%;
+    margin: 20px;
+    position: relative;
+}
+
+#search {
+    display: flex;
+    align-items: center;
+    gap: 10px; 
+    border: none; /* Removido para um visual mais limpo */
+    border-radius: 10px; /* Arredondamento mais suave */
+    padding: 5px; /* Ajustado para um espaçamento interno mais leve */
+    background-color: rgba(255, 255, 255, 0.8); /* Fundo levemente transparente */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra sutil para profundidade */
+}
+
+#search .input-wrapper {
+    height: 54px;
+    width: 100%;
+    position: relative;
+}
+
+#search .input-wrapper .search-icon {
+    position: absolute;
+    top: 50%;
+    left: 15px; 
+    transform: translateY(-50%);
+    width: 20px; 
+    height: 20px;
+    pointer-events: none;
+    color: #5f41e4; /* Cor do ícone para harmonizar com o tema */
+}
+
+#search input {
+    height: 100%; 
+    width: 100%;
+    outline: none;
+    font-size: 1rem; 
+    font-weight: 500; 
+    padding: 0 20px 0 50px; 
+    border-radius: 10px; /* Arredondamento mais suave */
+    border: 1px solid transparent; /* Borda invisível para um visual limpo */
+    background: transparent; /* Fundo transparente para mesclar com o contêiner */
+    transition: border-color 0.3s ease; /* Transição suave para foco */
+}
+
+#search input:focus {
+    border-color: #5f41e4; /* Cor da borda ao focar */
+    background: rgba(255, 255, 255, 0.9); /* Fundo levemente mais claro ao focar */
+}
+
+#search button {
+    height: 54px;
+    width: 56px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    outline: none;
+    color: #fff; /* Cor do texto no botão */
+    cursor: pointer;
+    background: #a496e6; /* Cor de fundo do botão */
+    border-radius: 10px; /* Arredondamento mais suave */
+    border: none; /* Removido para um visual mais limpo */
+    transition: background 0.3s ease, transform 0.2s ease; /* Transições suaves */
+}
+
+#search button:hover {
+    background: #487ff5; /* Cor de fundo ao passar o mouse */
+    transform: scale(1.05); /* Leve aumento ao passar o mouse */
+}
+
+#weather {
+    display: none;
+    margin-top: 20px;   
+    text-align: center;
+}
+
+#weather.show {
+    display: block;
+}
+
+#weather #title {
+    text-align: center;
+    margin-bottom: 5px;
+    font-weight: 600;
+    color: #372f3f;
+}
+
+#alert {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10px;
+}
+
+#temp {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 20px;
+    background-color: rgba(240, 248, 255, 0.432);
+    color: #fff;
+    border-radius: 20px;
+    padding: 20px;
+}
+
+#temp_img {
+    filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.2));
+}
+
+#temp_value {
+    font-weight: bold;
+    font-size: 50px;
+    line-height: 55px;
+}
+
+#temp_description {
+    font-weight: 500;
+    text-transform: capitalize;
+}
+
+#other_infos {
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+
+#other_infos .info {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    padding: 4px 10px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+    background-color: rgba(240, 248, 255, 0.432);
+    gap: 10px;
+}
+
+#other_infos .info h2 {
+    font-size: 12px;
+    font-weight: 600;
+}
+
+#other_infos .info i {
+    text-align: center;
+    font-size: 20px;
+    width: 20%;
+}
+
+#hourly_weather {
+    margin-top: 20px;
+}
+
+.carousel {
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden; /* Oculta itens fora do carrossel */
+}
+
+.carousel-container {
+    display: flex;
+    transition: transform 0.5s ease;
+    width: max-content; /* Permite que o container se expanda conforme necessário */
+    overflow-x: auto; /* Permite rolagem horizontal */
+}
+
+.hourly_item {
+    background-color: rgba(240, 248, 255, 0.432);
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    flex: 0 0 25%; /* Define a largura dos itens do carrossel para 25% */
+    margin: 5px; /* Espaçamento entre os itens */
+}
+
+.carousel-button {
+    background-color: rgba(255, 255, 255, 0.8);
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+}
+
+.carousel-button.prev {
+    left: 10px;
+}
+
+.carousel-button.next {
+    right: 10px;
+}
